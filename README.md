@@ -6,7 +6,7 @@ $(document).ready(function()
 	{
 		if(timeout) return;
 		var downloadbtn = $(e).parent().find('.downloadbtn');
-		$(downloadbtn).attr('disabled', true);
+		$(downloadbtn).attr('disabled', false);
 		timeout = setTimeout(tick, 1000);
 
 		function tick()
@@ -20,8 +20,8 @@ $(document).ready(function()
 			}
 			else
 			{
-				$(e).find(".seconds").text(remaining.toString());
-				setTimeout(tick, 1000);
+				$(e).css('visibility', 'hidden');
+				$('.downloadbtn').attr('disabled', false);
 			}
 		}
 	});
